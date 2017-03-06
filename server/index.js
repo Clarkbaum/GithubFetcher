@@ -27,7 +27,10 @@ app.get('/repos', function (req, res) {
 
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/client/index.html')
+  console.log("dirname", __dirname)
+  //res.sendFile(__dirname + '/client/index.html')
+  //not sure why this __dirname isnt working oh well
+  res.sendFile('/Users/nbaumg/fullstack-exercise/hratx25-fullstack-exercise/client/index.html')
 });
 
 var port = process.env.PORT || 4040;
