@@ -7,9 +7,9 @@
 <h2>GitHub Fetcher</h2>
 <form class="repo-fetcher">
   <h3>Enter a GitHub username to fetch:</h3>
-  <input type="text" name="username" />
+  <input type="text" name="username" value="Clarkbaum" />
 
-  <button type="submit">Fetch User's Repos</button>
+  <button type="button">Fetch User's Repos</button>
 </form>
 
 <table class="top-repos"></table>
@@ -24,6 +24,26 @@
 //  and send result to POST /repos/import
 //
 // $('.repo-fetcher')...
+
+
+$(document).ready(function(){ 
+  var button = $('.repo-fetcher').find('button');
+
+  button.click(function(event){
+    var textVal = $('.repo-fetcher').find('input').val();
+    $.get('https://api.github.com/users/' + textVal + '/repos', function(data) {
+      console.log("data", data);
+      data.forEach(function(item){
+        var repoName = item.name;
+        var ownerName = item.owner.login;
+        var stargazars = item.stargazers_count;
+
+        $.post('/repos/import', {repoName: repoName, ownerName: ownerName, stargazers: stargazars})
+        .done(console.log("done"));
+      })
+    });
+  })
+})
 
 </script>
 </body>

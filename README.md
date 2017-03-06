@@ -42,7 +42,7 @@ Here are diagrams of the above two main points:
 
 - [ /] Use [knex migrations](http://knexjs.org/#Migrations-CLI) to create a `repos` table. It should have columns for the repo's name, the owner's username, and the repo's number of stargazers.
 
-- [ ] When a user types a github username into the text field, use jQuery to fetch that user's GitHub repositories from the [GitHub API](https://developer.github.com/v3/).
+- [ /] When a user types a github username into the text field, use jQuery to fetch that user's GitHub repositories from the [GitHub API](https://developer.github.com/v3/).
 
 - [ ] Still using jQuery, send the data you get from GitHub to your express server via `POST /repos/import`. This endpoint should store that data in the database.
 
