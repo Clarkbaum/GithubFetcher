@@ -50,7 +50,7 @@ Here are diagrams of the above two main points:
 
 - [ /] Write a `GET /repos` endpoint that retrieves the top 25 repos stored in your database, sorted by most stargazers
 
-- [ ] When the page loads, you should fetch `GET /repos` using jQuery and display the repo information on the page in an HTML table.
+- [ /] When the page loads, you should fetch `GET /repos` using jQuery and display the repo information on the page in an HTML table.
 
 - [ ] Make each repo's name in the table link to that repo's page on GitHub.
 

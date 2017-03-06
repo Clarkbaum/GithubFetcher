@@ -27,6 +27,10 @@
 
 
 $(document).ready(function(){ 
+  $.get('/repos', function(data){
+    $('.top-repos').append(data)
+  })
+
   var button = $('.repo-fetcher').find('button');
 
   button.click(function(event){

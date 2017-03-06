@@ -49,18 +49,30 @@ app.get('/repos', function (req, res) {
       resp = resp.sort(function(a, b){
         return b.stargazers - a.stargazers;
       })
+      tableHTML += '<tr>';
+      tableHTML += '<td> Repo Name </td>'
+      tableHTML += '<td> Owner\'s Name </td>'
+      tableHTML += '<td> Stargazers </td>'
+      tableHTML += '</tr>';
+      tableHTML += '<tr>';
+      tableHTML += '<td></td>'
+      tableHTML += '<td></td>'
+      tableHTML += '<td></td>'
+      tableHTML += '</tr>';
       resp.forEach(function(item){
         tableHTML += '<tr>';
-        tableHTML += '<td> Repo Name:  + '+ item.RepoName + '</td>';
-        tableHTML += '<td> Owner\'s Name: ' + item.ownersName + '</td>';
-        tableHTML += '<td> stargazers: ' + item.stargazers + '</td>'
+        tableHTML += '<td>'+ item.RepoName + '</td>';
+        tableHTML += '<td><a href=https://github.com/' + item.ownersName + ' style="display:block;">&nbsp;</a></td>';
+        tableHTML += '<td>' + item.stargazers + '</td>'
         tableHTML += '</tr>';
       })
       tableHTML += '</table>'
-      console.log("tableHTML", tableHTML)
       res.end(tableHTML)
     })
 });
+
+//<td><a href="..." style="display:block;">&nbsp;</a></td>
+
 
 
 app.get('/', function (req, res) {
