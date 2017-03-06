@@ -46,9 +46,9 @@ Here are diagrams of the above two main points:
 
 - [ /] Still using jQuery, send the data you get from GitHub to your express server via `POST /repos/import`. This endpoint should store that data in the database.
 
-    - [ ] Ensure there are no duplicate repos. If you happen to import the same repo twice, it should only show up once in your database. See the tips section about considering unique columns.
+    - [ /] Ensure there are no duplicate repos. If you happen to import the same repo twice, it should only show up once in your database. See the tips section about considering unique columns.
 
-- [ ] Write a `GET /repos` endpoint that retrieves the top 25 repos stored in your database, sorted by most stargazers
+- [ /] Write a `GET /repos` endpoint that retrieves the top 25 repos stored in your database, sorted by most stargazers
 
 - [ ] When the page loads, you should fetch `GET /repos` using jQuery and display the repo information on the page in an HTML table.
 
