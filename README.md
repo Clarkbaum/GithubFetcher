@@ -44,7 +44,7 @@ Here are diagrams of the above two main points:
 
 - [ /] When a user types a github username into the text field, use jQuery to fetch that user's GitHub repositories from the [GitHub API](https://developer.github.com/v3/).
 
-- [ ] Still using jQuery, send the data you get from GitHub to your express server via `POST /repos/import`. This endpoint should store that data in the database.
+- [ /] Still using jQuery, send the data you get from GitHub to your express server via `POST /repos/import`. This endpoint should store that data in the database.
 
     - [ ] Ensure there are no duplicate repos. If you happen to import the same repo twice, it should only show up once in your database. See the tips section about considering unique columns.
 
