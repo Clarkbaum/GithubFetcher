@@ -38,19 +38,27 @@ app.post('/repos/import', function (req, res) {
       }
     })
   res.status(200);
-  res.end("test end");
+  res.end();
 });
 
 app.get('/repos', function (req, res) {
+  var tableHTML = '<table border="1">';
   res.status(200);
   knex.select('*').from('repos')
     .then(function(resp){
-      resp.forEach(function(item){
-        res.write("Repo Name: " + item.RepoName + "\n")
-        res.write("Owner's Name: " + item.ownersName + "\n")
-        res.write("stargazers: " + item.stargazers + "\n\n")
+      resp = resp.sort(function(a, b){
+        return b.stargazers - a.stargazers;
       })
-      res.end()
+      resp.forEach(function(item){
+        tableHTML += '<tr>';
+        tableHTML += '<td> Repo Name:  + '+ item.RepoName + '</td>';
+        tableHTML += '<td> Owner\'s Name: ' + item.ownersName + '</td>';
+        tableHTML += '<td> stargazers: ' + item.stargazers + '</td>'
+        tableHTML += '</tr>';
+      })
+      tableHTML += '</table>'
+      console.log("tableHTML", tableHTML)
+      res.end(tableHTML)
     })
 });
 
