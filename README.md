@@ -57,7 +57,7 @@ Here are diagrams of the above two main points:
 - After an import, update the page with the latest top 25 **without requiring a page refresh**.
   - Make sure there are no duplicates.
 
-- [ ] After completing all of the above requirements, put in a help ticket to demo your app to a Hacker in Residence.
+- [ /] After completing all of the above requirements, put in a help ticket to demo your app to a Hacker in Residence.
 
 **DO NOT MOVE ON TO Extra Credit UNTIL YOU HAVE DEMOED YOUR APP!**
 
