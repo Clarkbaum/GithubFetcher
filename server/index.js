@@ -36,6 +36,9 @@ app.post('/repos/import', function (req, res) {
             console.log("error inserting into repos", err)
           })
       }
+    }).then(function(){
+      //cant set headers after they are sent when i use this line. i need to redirect to / or refresh page another way
+      //res.location('/repos');
     })
   res.status(200);
   res.end();
