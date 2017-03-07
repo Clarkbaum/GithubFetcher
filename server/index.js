@@ -59,13 +59,15 @@ app.get('/repos', function (req, res) {
       tableHTML += '<td></td>'
       tableHTML += '<td></td>'
       tableHTML += '</tr>';
-      resp.forEach(function(item){
-        tableHTML += '<tr>';
-        tableHTML += '<td>'+ item.RepoName + '</td>';
-        tableHTML += '<td><a href="https://github.com/' + item.ownersName + '"><div style="height:100%; width:100%">'+item.ownersName+'</div></a></td>';
-        tableHTML += '<td>' + item.stargazers + '</td>'
-        tableHTML += '</tr>';
-      })
+      for(var i =0 ; i < 25; i++){ 
+        if(resp[i]){
+          tableHTML += '<tr>';
+          tableHTML += '<td>'+ resp[i].RepoName + '</td>';
+          tableHTML += '<td><a href="https://github.com/' + resp[i].ownersName + '"><div style="height:100%; width:100%">'+resp[i].ownersName+'</div></a></td>';
+          tableHTML += '<td>' + resp[i].stargazers + '</td>'
+          tableHTML += '</tr>';
+        }
+      }
       tableHTML += '</table>'
       res.end(tableHTML)
     })

@@ -27,11 +27,16 @@
 
 
 $(document).ready(function(){ 
+  var button = $('.repo-fetcher').find('button');
+
+  button.click(function() {
+    window.location.href=window.location.href;
+  });
+
   $.get('/repos', function(data){
     $('.top-repos').append(data)
   })
 
-  var button = $('.repo-fetcher').find('button');
 
   button.click(function(event){
     var textVal = $('.repo-fetcher').find('input').val();
