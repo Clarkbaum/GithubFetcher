@@ -44,7 +44,9 @@ $(document).ready(function(){
         var stargazars = item.stargazers_count;
 
         $.post('/repos/import', {repoName: repoName, ownerName: ownerName, stargazers: stargazars})
-        .done(console.log("done"));
+        .done(function(){
+          window.location.reload();
+        });
       })
     });
   })

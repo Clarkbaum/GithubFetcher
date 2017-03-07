@@ -39,6 +39,8 @@ app.post('/repos/import', function (req, res) {
     }).then(function(){
       //cant set headers after they are sent when i use this line. i need to redirect to / or refresh page another way
       //res.location('/repos');
+      console.log("sent")
+      res.sendFile('/Users/nbaumg/fullstack-exercise/hratx25-fullstack-exercise/client/index.html')
     })
   res.status(200);
   res.end();
