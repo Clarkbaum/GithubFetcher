@@ -52,7 +52,7 @@ Here are diagrams of the above two main points:
 
 - [ /] When the page loads, you should fetch `GET /repos` using jQuery and display the repo information on the page in an HTML table.
 
-- [ ] Make each repo's name in the table link to that repo's page on GitHub.
+- [ /] Make each repo's name in the table link to that repo's page on GitHub.
 
 - After an import, update the page with the latest top 25 **without requiring a page refresh**.
   - Make sure there are no duplicates.

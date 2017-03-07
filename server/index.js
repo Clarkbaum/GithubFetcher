@@ -62,7 +62,7 @@ app.get('/repos', function (req, res) {
       resp.forEach(function(item){
         tableHTML += '<tr>';
         tableHTML += '<td>'+ item.RepoName + '</td>';
-        tableHTML += '<td><a href=https://github.com/' + item.ownersName + ' style="display:block;">&nbsp;</a></td>';
+        tableHTML += '<td><a href="https://github.com/' + item.ownersName + '"><div style="height:100%; width:100%">'+item.ownersName+'</div></a></td>';
         tableHTML += '<td>' + item.stargazers + '</td>'
         tableHTML += '</tr>';
       })
@@ -70,8 +70,6 @@ app.get('/repos', function (req, res) {
       res.end(tableHTML)
     })
 });
-
-//<td><a href="..." style="display:block;">&nbsp;</a></td>
 
 
 
